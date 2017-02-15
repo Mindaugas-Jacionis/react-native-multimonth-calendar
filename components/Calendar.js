@@ -7,26 +7,30 @@ import moment from 'moment';
 class Calendar extends Component {
   static propTypes = {
     startTime: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
-    unavailable: ,
-    check: ,
-    headerStyle ,
-    num:
+    unavailable: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
+    selected: PropTypes.string,
+    headerStyle: PropTypes.object,
+    monthsCount: PropTypes.number
   };
 
   static defaultProps = {
-    var holiday = this.props.holiday || {};
-    var check = this.props.check || {};
-    var headerStyle = this.props.headerStyle || {};
-    var num = this.props.num || 3;
     startTime: moment(),
-    unavailable: ,
-    check: ,
-    headerStyle ,
-    num:
+    unavailable: [],
+    selected: moment(),
+    headerStyle {},
+    monthsCount: 3
   };
 
   constructor(props) {
     super(props);
+  }
+
+  render() {
+    return (
+      <ScrollView style={styles.container}>
+        <Text>Here will be my Calendar component</Text>
+      </ScrollView>
+    );
   }
 }
 
@@ -157,13 +161,14 @@ var Calendar = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'blue'
   },
+
   flex_1:{
     flex:1,
     alignItems:'center',
     justifyContent:'center',
   },
+
   calendar_container:{
     backgroundColor:'#fff',
     flex:1,
@@ -171,27 +176,33 @@ var styles = StyleSheet.create({
     borderBottomWidth:1/PixelRatio.get(),
     borderColor:'#ccc'
   },
+
   row_header:{
     backgroundColor:'#F5F5F5',
     borderBottomWidth:1/PixelRatio.get(),
     borderBottomColor:'#ccc',
   },
+
   row:{
     flexDirection:'row',
     height:35,
   },
+
   month:{
     alignItems:'center',
     justifyContent:'center',
     height:40,
   },
+
   month_text:{
     fontSize:18,
     fontWeight:'400',
   },
+
   week_highlight:{
     color:'#23B8FC'
   },
+
   cm_bottom:{
     borderBottomWidth:1/PixelRatio.get(),
     borderBottomColor:'#ccc',
