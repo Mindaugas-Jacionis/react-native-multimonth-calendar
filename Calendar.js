@@ -2,19 +2,27 @@
 
 import React, { Component, PropTypes } from 'react';
 import { View, ScrollView, Text, TouchableHighlight StyleSheet, PixelRatio } from 'react-native';
+import moment from 'moment';
 
 class Calendar extends Component {
   static propTypes = {
-    startTime: React.PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
-    unavailable:
+    startTime: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
+    unavailable: ,
+    check: ,
+    headerStyle ,
+    num:
   };
 
   static defaultProps = {
     var holiday = this.props.holiday || {};
     var check = this.props.check || {};
     var headerStyle = this.props.headerStyle || {};
-    //显示月份的个数
     var num = this.props.num || 3;
+    startTime: moment(),
+    unavailable: ,
+    check: ,
+    headerStyle ,
+    num:
   };
 
   constructor(props) {

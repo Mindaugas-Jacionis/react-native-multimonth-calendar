@@ -1,0 +1,28 @@
+{
+  "name": "react-native-multimonth-calendar",
+  "version": "0.0.1",
+  "description": "Here will be multimonth calendar component with props: unavailable, selected date, start date, months count",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Mindaugas-Jacionis/react-native-multimonth-calendar.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "component",
+    "calendar"
+  ],
+  "author": "Mindaugas Jačionis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Mindaugas-Jacionis/react-native-multimonth-calendar/issues"
+  },
+  "homepage": "https://gitlab.com/Mindaugas-Jacionis/react-native-multimonth-calendar#README",
+  "dependencies": {
+    "moment": "^2.17.1"
+  }
+}
