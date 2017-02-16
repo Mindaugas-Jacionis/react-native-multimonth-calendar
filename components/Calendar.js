@@ -8,9 +8,12 @@ class Calendar extends Component {
     startDate: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
     unavailable: PropTypes.array,
     selected: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
-    headerStyle: PropTypes.object,
+    weekContianerStyle: PropTypes.object,
+    weekTextStyle: PropTypes.object,
+    headlineTextStyle: PropTypes.object,
+    dayTextStyle: PropTypes.object,
     monthsCount: PropTypes.number,
-    weekHeadings: PropTypes.array,
+    week: PropTypes.array,
     monthNames: PropTypes.array
   };
 
@@ -18,9 +21,12 @@ class Calendar extends Component {
     startDate: moment(),
     unavailable: [],
     selected: moment(),
-    headerStyle: {},
+    weekContianerStyle: {},
+    weekTextStyle: {},
+    headlineTextStyle: {},
+    dayTextStyle: {},
     monthsCount: 3,
-    weekHeadings: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    week: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
     monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   };
 
@@ -29,24 +35,24 @@ class Calendar extends Component {
   }
 
   renderHeader() {
-    const { weekHeadings, headerStyle } = this.props;
-    const headings = _.map(weekHeadings , (heading) => {
+    const { week, weekContianerStyle, weekTextStyle } = this.props;
+    const headings = _.map(week , (heading) => {
       return (
         <View style={styles.default}>
-          <Text style={headerStyle}>{heading}</Text>
+          <Text style={[styles.week, weekTextStyle]}>{heading}</Text>
         </View>
       );
     });
 
     return (
-      <View style={[styles.row, headerStyle]}>
+      <View style={[styles.row, weekContianerStyle]}>
         {headings}
       </View>
     );
   }
 
   renderCalendars() {
-    const { startDate, unavailable, selected, headerStyle, monthsCount } = this.props;
+    const { startDate, monthsCount } = this.props;
     let calendars = [];
 
     for (let i = 0; i < monthsCount; i++) {
@@ -60,18 +66,16 @@ class Calendar extends Component {
   }
 
   renderMonth(date) {
-    const { monthNames } = this.props;
+    const { monthNames, headlineTextStyle } = this.props;
     const year = date.year();
     const currentMonth = monthNames[date.month()];
-    const monthDaysCount = date.daysInMonth();
-    const monthStartOffset = (date.startOf('month').day() || 7) - 1
-    const monthEndOffset = 7 - date.endOf('month').day();
-    // const weeksCount = (monthDaysCount + monthStartOffset + monthEndOffset)/7;
     let month = this.renderWeeks(date);
 
     return (
       <View>
-        <Text style={styles.default}>{`${currentMonth} ${year}`}</Text>
+        <Text style={[styles.default, headlineTextStyle]}>
+          {`${currentMonth} ${year}`}
+        </Text>
         <View>
           {month}
         </View>
@@ -84,9 +88,7 @@ class Calendar extends Component {
     let weeks = [];
     let days = [];
 
-    console.log('Maybe it is const', monthDaysCount);
     for (let i = 1; i <= monthDaysCount; i++) {
-      console.log('loop', i, monthDaysCount);
       if (Number(date.date(i).day()) === 1 && i < monthDaysCount) {
         const day = this.renderDay(i, date);
         const daysOfWeek = days.length !== 7 ? this.fillInWeek(days, 'unshift') : days;
@@ -103,16 +105,16 @@ class Calendar extends Component {
         let day = this.renderDay(i, date);
         days = _.union(days, [day]);
       }
-      console.log('end of cicle', weeks, days);
     }
 
     return weeks;
   }
 
   renderDay(dayNumber, date) {
+    const { dayTextStyle } = this.props;
     return (
       <TouchableOpacity style={styles.default} onPress={() => this.props.onSelect(date.date(dayNumber).toDate())}>
-        <Text>
+        <Text style={[styles.unavailable, dayTextStyle]}>
           {dayNumber}
         </Text>
       </TouchableOpacity>
@@ -120,7 +122,6 @@ class Calendar extends Component {
   }
 
   fillInWeek(days, method) {
-    console.log('method', method, days);
     let week = days;
     while (week.length !== 7) {
       week[method](<View style={styles.default} />);
@@ -130,8 +131,6 @@ class Calendar extends Component {
   }
 
   render() {
-    const { startDate, unavailable, selected, headerStyle, monthsCount } = this.props;
-
     return (
       <View style={styles.container}>
         {this.renderHeader()}
@@ -155,11 +154,16 @@ var styles = StyleSheet.create({
     justifyContent:'center',
     textAlign: 'center',
     borderColor: 'green',
-    borderWidth: 1
+    borderWidth: 1,
+    paddingVertical: 10
   },
 
   row: {
     flexDirection: 'row',
+  },
+
+  unavailable: {
+    textDecorationLine: 'line-through'
   }
 });
 
