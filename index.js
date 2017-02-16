@@ -1,3 +1,3 @@
-import Calendar from './components';
+import { Calendar } from './components/Calendar';
 
 module.exports = Calendar;
