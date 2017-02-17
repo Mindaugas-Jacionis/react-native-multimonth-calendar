@@ -16,7 +16,7 @@ class Calendar extends Component {
     week: PropTypes.array,
     monthNames: PropTypes.array,
     onSelect: PropTypes.function,
-    onUnavailableSelect: PropTypes.function,
+    onUnavailableSelect: PropTypes.any,
     clickablePast: PropTypes.bool,
     pastTextStyle: PropTypes.object
   };
@@ -33,13 +33,16 @@ class Calendar extends Component {
     week: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
     monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     onSelect: () => {},
-    onUnavailableSelect: () => {},
+    onUnavailableSelect: null,
     clickablePast: false,
     pastTextStyle: {}
   };
 
   constructor(props) {
     super(props);
+    this.state = {
+      selected: moment(this.props.selected).format('YYYY-MM-DD')
+    }
   }
 
   renderHeader() {
@@ -119,11 +122,28 @@ class Calendar extends Component {
     return weeks;
   }
 
+  onPress(formatedDate) {
+    const { unavailable, onSelect, onUnavailableSelect, clickablePast } = this.props;
+    const isUnavailable = unavailable.includes(formatedDate);
+    const notPast = moment().format('YYYY-MM-DD') <= formatedDate;
+
+    if (isUnavailable && typeof(onUnavailableSelect)  === 'function') {
+      onUnavailableSelect(formatedDate);
+      this.setState({ selected: formatedDate });
+    }
+    if ((clickablePast || notPast) && !isUnavailable) {
+      onSelect(formatedDate);
+      this.setState({ selected: formatedDate });
+    }
+  }
+
   renderDay(dayNumber, date) {
     const { dayTextStyle, unavailable, onSelect, onUnavailableSelect, clickablePast, unavailableTextStyle, pastTextStyle } = this.props;
+    const { selected } = this.state;
     const formatedDate = date.format('YYYY-MM-DD');
     const isUnavailable = unavailable.includes(formatedDate);
-    const notPast = moment().format('YYYY-MM-DD') <= date.format('YYYY-MM-DD');
+    const isSelected = formatedDate === selected;
+    const notPast = moment().format('YYYY-MM-DD') <= formatedDate;
     const select = clickablePast || notPast ? () => onSelect(formatedDate) : null;
     const onPress = isUnavailable ? () => onUnavailableSelect(formatedDate) : select;
     let style = [styles.day, dayTextStyle];
@@ -131,10 +151,12 @@ class Calendar extends Component {
     !notPast ? style.push.apply(style, [styles.past, pastTextStyle]) : null;
 
     return (
-      <TouchableOpacity style={styles.default} onPress={onPress}>
-        <Text style={style}>
-          {dayNumber}
-        </Text>
+      <TouchableOpacity style={styles.default} onPress={() => this.onPress(formatedDate)}>
+        <View style={isSelected ? styles.selected : null}>
+          <Text style={style}>
+            {dayNumber}
+          </Text>
+        </View>
       </TouchableOpacity>
     );
   }
@@ -191,6 +213,12 @@ var styles = StyleSheet.create({
   day: {
     fontSize: 16,
     fontWeight: '500'
+  },
+
+  selected: {
+    backgroundColor: '#E41F36',
+    padding: 5,
+    borderRadius: 1000
   },
 
   unavailable: {
