@@ -14,7 +14,11 @@ class Calendar extends Component {
     dayTextStyle: PropTypes.object,
     monthsCount: PropTypes.number,
     week: PropTypes.array,
-    monthNames: PropTypes.array
+    monthNames: PropTypes.array,
+    onSelect: PropTypes.function,
+    onUnavailableSelect: PropTypes.function,
+    clickablePast: PropTypes.bool,
+    pastTextStyle: PropTypes.object
   };
 
   static defaultProps = {
@@ -27,7 +31,11 @@ class Calendar extends Component {
     dayTextStyle: {},
     monthsCount: 3,
     week: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    onSelect: () => {},
+    onUnavailableSelect: () => {},
+    clickablePast: false,
+    pastTextStyle: {}
   };
 
   constructor(props) {
@@ -52,11 +60,12 @@ class Calendar extends Component {
   }
 
   renderCalendars() {
-    const { startDate, monthsCount } = this.props;
+    const { monthsCount, startDate } = this.props;
+    const start = moment(startDate);
     let calendars = [];
 
     for (let i = 0; i < monthsCount; i++) {
-      let monthToRender = moment(startDate).add(i, 'month');
+      let monthToRender = start.add(i, 'month');
       let month = this.renderMonth(monthToRender);
 
       calendars = _.union(calendars, [month])
@@ -73,7 +82,7 @@ class Calendar extends Component {
 
     return (
       <View>
-        <Text style={[styles.default, headlineTextStyle]}>
+        <Text style={[styles.default, styles.title, headlineTextStyle]}>
           {`${currentMonth} ${year}`}
         </Text>
         <View>
@@ -111,10 +120,19 @@ class Calendar extends Component {
   }
 
   renderDay(dayNumber, date) {
-    const { dayTextStyle } = this.props;
+    const { dayTextStyle, unavailable, onSelect, onUnavailableSelect, clickablePast, unavailableTextStyle, pastTextStyle } = this.props;
+    const formatedDate = date.format('YYYY-MM-DD');
+    const isUnavailable = unavailable.includes(formatedDate);
+    const notPast = moment().format('YYYY-MM-DD') <= date.format('YYYY-MM-DD');
+    const select = clickablePast || notPast ? () => onSelect(formatedDate) : null;
+    const onPress = isUnavailable ? () => onUnavailableSelect(formatedDate) : select;
+    let style = [styles.day, dayTextStyle];
+    isUnavailable ? style.push.apply(style, [styles.unavailable, unavailableTextStyle]) : null;
+    !notPast ? style.push.apply(style, [styles.past, pastTextStyle]) : null;
+
     return (
-      <TouchableOpacity style={styles.default} onPress={() => this.props.onSelect(date.date(dayNumber).toDate())}>
-        <Text style={[styles.unavailable, dayTextStyle]}>
+      <TouchableOpacity style={styles.default} onPress={onPress}>
+        <Text style={style}>
           {dayNumber}
         </Text>
       </TouchableOpacity>
@@ -153,8 +171,6 @@ var styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     textAlign: 'center',
-    borderColor: 'green',
-    borderWidth: 1,
     paddingVertical: 10
   },
 
@@ -162,8 +178,28 @@ var styles = StyleSheet.create({
     flexDirection: 'row',
   },
 
+  week: {
+    fontSize: 16,
+    fontWeight: '700'
+  },
+
+  title: {
+    fontSize: 20,
+    fontWeight: '700'
+  },
+
+  day: {
+    fontSize: 16,
+    fontWeight: '500'
+  },
+
   unavailable: {
-    textDecorationLine: 'line-through'
+    textDecorationLine: 'line-through',
+    opacity: 0.5
+  },
+
+  past: {
+    opacity: 0.3
   }
 });
 
