@@ -64,12 +64,11 @@ class Calendar extends Component {
 
   renderCalendars() {
     const { monthsCount, startDate } = this.props;
-    const start = moment(startDate);
     let calendars = [];
 
     for (let i = 0; i < monthsCount; i++) {
-      let monthToRender = start.add(i, 'month');
-      let month = this.renderMonth(monthToRender);
+      const start = moment(startDate);
+      let month = this.renderMonth(start.add(i, 'month'));
 
       calendars = _.union(calendars, [month])
     }
