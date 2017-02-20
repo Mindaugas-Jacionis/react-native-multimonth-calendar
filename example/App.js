@@ -9,11 +9,12 @@ import Calendar from 'react-native-multimonth-calendar';
 
 export default function App() {
 
-  class DefaultProject extends Component {
+  class example extends Component {
     render() {
       return (
         <View style={styles.container}>
-          <Calendar monthsCount={5} unavailable={['2017-02-01']} />
+          <Text>Example App</Text>
+          <Calendar monthsCount={8} />
         </View>
       );
     }
@@ -26,5 +27,5 @@ export default function App() {
     }
   });
 
-  AppRegistry.registerComponent('DefaultProject', () => DefaultProject);
+  AppRegistry.registerComponent('example', () => example);
 }

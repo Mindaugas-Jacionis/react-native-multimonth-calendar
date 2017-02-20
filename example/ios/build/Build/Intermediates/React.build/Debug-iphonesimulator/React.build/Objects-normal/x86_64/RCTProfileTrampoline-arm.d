@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Profiler/RCTProfileTrampoline-arm.S \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Profiler/RCTMacros.h
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Profiler/RCTProfileTrampoline-arm.S \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Profiler/RCTMacros.h

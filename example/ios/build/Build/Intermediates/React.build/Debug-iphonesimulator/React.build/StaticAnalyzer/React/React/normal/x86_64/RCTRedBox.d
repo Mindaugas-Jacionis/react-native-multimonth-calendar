@@ -1,24 +1,24 @@
 dependencies: \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Modules/RCTRedBox.m \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Modules/RCTRedBox.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTErrorCustomizer.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTConvert.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTAnimationType.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTErrorInfo.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTJSStackFrame.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTUtils.h
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Modules/RCTRedBox.m \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Modules/RCTRedBox.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTErrorCustomizer.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTErrorInfo.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTJSStackFrame.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTUtils.h

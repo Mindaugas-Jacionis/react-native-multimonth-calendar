@@ -18,7 +18,8 @@ class Calendar extends Component {
     onSelect: PropTypes.function,
     onUnavailableSelect: PropTypes.any,
     clickablePast: PropTypes.bool,
-    pastTextStyle: PropTypes.object
+    pastTextStyle: PropTypes.object,
+    selectedTextStyle: PropTypes.object
   };
 
   static defaultProps = {
@@ -35,7 +36,8 @@ class Calendar extends Component {
     onSelect: () => {},
     onUnavailableSelect: null,
     clickablePast: false,
-    pastTextStyle: {}
+    pastTextStyle: {},
+    selectedTextStyle: {}
   };
 
   constructor(props) {
@@ -64,16 +66,14 @@ class Calendar extends Component {
 
   renderCalendars() {
     const { monthsCount, startDate } = this.props;
-    let calendars = [];
+    let months = [];
 
     for (let i = 0; i < monthsCount; i++) {
       const start = moment(startDate);
-      let month = this.renderMonth(start.add(i, 'month'));
-
-      calendars = _.union(calendars, [month])
+      months.push(start.add(i, 'month'));
     }
 
-    return calendars;
+    return _.map(months, (month) => this.renderMonth(month));
   }
 
   renderMonth(date) {
@@ -96,26 +96,38 @@ class Calendar extends Component {
 
   renderWeeks(date) {
     const monthDaysCount = date.daysInMonth();
+    let iterator = monthDaysCount;
     let weeks = [];
     let days = [];
 
-    for (let i = 1; i <= monthDaysCount; i++) {
-      if (Number(date.date(i).day()) === 1 && i < monthDaysCount) {
-        const day = this.renderDay(i, date);
-        const daysOfWeek = days.length !== 7 ? this.fillInWeek(days, 'unshift') : days;
+    while (iterator) {
+      const dayNumber = monthDaysCount + 1 - iterator;
+
+      if (Number(date.date(dayNumber).day()) === 1 && dayNumber !== monthDaysCount) {
+        const day = this.renderDay(dayNumber, date);
+        const daysOfWeek = days.length < 7 ? this.fillInWeek(days, 'unshift') : days;
         const weekRow = <View style={styles.row}>{daysOfWeek}</View>;
         weeks = _.union(weeks, [weekRow]);
         days = _.union([], [day]);
-      } else if (i === monthDaysCount) {
-        const day = this.renderDay(i, date);
+      } else if (monthDaysCount === dayNumber && days.length !== 7) {
+        const day = this.renderDay(dayNumber, date);
         days = _.union(days, [day]);
-        const daysOfWeek = days.length !== 7 ? this.fillInWeek(days, 'push') : days;
+        const daysOfWeek = days.length < 7 ? this.fillInWeek(days, 'push') : days;
         const weekRow = <View style={styles.row}>{daysOfWeek}</View>;
         weeks = _.union(weeks, [weekRow]);
+      } else if (monthDaysCount === dayNumber) {
+        const fullWeek = <View style={styles.row}>{days}</View>
+        const day = this.renderDay(dayNumber, date);
+        days = _.union([], [day]);
+        const daysOfWeek = days.length < 7 ? this.fillInWeek(days, 'push') : days;
+        const weekRow = <View style={styles.row}>{daysOfWeek}</View>;
+        weeks = _.union(weeks, [fullWeek, weekRow]);
       } else {
-        let day = this.renderDay(i, date);
+        let day = this.renderDay(dayNumber, date);
         days = _.union(days, [day]);
       }
+
+      iterator--;
     }
 
     return weeks;
@@ -137,21 +149,21 @@ class Calendar extends Component {
   }
 
   renderDay(dayNumber, date) {
-    const { dayTextStyle, unavailable, onSelect, onUnavailableSelect, clickablePast, unavailableTextStyle, pastTextStyle } = this.props;
+    const { dayTextStyle, unavailable, unavailableTextStyle, pastTextStyle, selectedTextStyle } = this.props;
     const { selected } = this.state;
     const formatedDate = date.format('YYYY-MM-DD');
     const isUnavailable = unavailable.includes(formatedDate);
     const isSelected = formatedDate === selected;
     const notPast = moment().format('YYYY-MM-DD') <= formatedDate;
-    const select = clickablePast || notPast ? () => onSelect(formatedDate) : null;
-    const onPress = isUnavailable ? () => onUnavailableSelect(formatedDate) : select;
+
     let style = [styles.day, dayTextStyle];
     isUnavailable ? style.push.apply(style, [styles.unavailable, unavailableTextStyle]) : null;
     !notPast ? style.push.apply(style, [styles.past, pastTextStyle]) : null;
+    isSelected ? style.push.apply(style, [styles.selectedText, selectedTextStyle]) : null;
 
     return (
       <TouchableOpacity style={styles.default} onPress={() => this.onPress(formatedDate)}>
-        <View style={isSelected ? styles.selected : null}>
+        <View style={isSelected ? styles.selected : {}}>
           <Text style={style}>
             {dayNumber}
           </Text>
@@ -162,6 +174,8 @@ class Calendar extends Component {
 
   fillInWeek(days, method) {
     let week = days;
+    let iterator = week.length;
+
     while (week.length !== 7) {
       week[method](<View style={styles.default} />);
     }
@@ -216,8 +230,16 @@ var styles = StyleSheet.create({
 
   selected: {
     backgroundColor: '#E41F36',
-    padding: 5,
+    width: 30,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 1000
+  },
+
+  selectedText: {
+    color: '#ffffff',
+    fontWeight: '700'
   },
 
   unavailable: {

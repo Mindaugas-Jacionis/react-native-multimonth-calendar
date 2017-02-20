@@ -1,24 +1,24 @@
 dependencies: \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Executors/RCTJSCExecutor.mm \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Executors/RCTJSCExecutor.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTJavaScriptExecutor.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBundleType.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Modules/JSCSamplingProfiler.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridge+Private.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Modules/RCTDevMenu.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Executors/RCTJSCErrorHandling.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Profiler/RCTJSCProfiler.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Profiler/RCTProfile.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTUtils.h
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Executors/RCTJSCExecutor.mm \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Executors/RCTJSCExecutor.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTJavaScriptExecutor.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBundleType.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Modules/JSCSamplingProfiler.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Modules/RCTDevMenu.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Executors/RCTJSCErrorHandling.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Profiler/RCTJSCProfiler.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTUtils.h

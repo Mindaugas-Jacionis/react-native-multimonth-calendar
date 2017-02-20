@@ -1,22 +1,22 @@
 dependencies: \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTTabBar.m \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTTabBar.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTEventDispatcher.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTTabBarItem.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTComponent.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTView.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTViewControllerProtocol.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/RCTWrapperViewController.h \
-  /Users/mindaugasjacionis/projects/DefaultProject/node_modules/react-native/React/Views/UIView+React.h
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTTabBar.m \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTTabBar.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTTabBarItem.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTView.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTViewControllerProtocol.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/RCTWrapperViewController.h \
+  /Users/mindaugasjacionis/personal/react-native-multimonth-calendar/example/node_modules/react-native/React/Views/UIView+React.h
