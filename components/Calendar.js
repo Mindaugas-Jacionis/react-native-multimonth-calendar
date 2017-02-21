@@ -19,7 +19,9 @@ class Calendar extends Component {
     onUnavailableSelect: PropTypes.any,
     clickablePast: PropTypes.bool,
     pastTextStyle: PropTypes.object,
-    selectedTextStyle: PropTypes.object
+    selectedTextStyle: PropTypes.object,
+    marked: PropTypes.array,
+    markedStyle: PropTypes.object
   };
 
   static defaultProps = {
@@ -37,7 +39,9 @@ class Calendar extends Component {
     onUnavailableSelect: null,
     clickablePast: false,
     pastTextStyle: {},
-    selectedTextStyle: {}
+    selectedTextStyle: {},
+    marked: [],
+    markedStyle: {}
   };
 
   constructor(props) {
@@ -168,8 +172,24 @@ class Calendar extends Component {
             {dayNumber}
           </Text>
         </View>
+        {this.renderMarker(formatedDate)}
       </TouchableOpacity>
     );
+  }
+
+  renderMarker(date) {
+    const { marked, markedStyle } = this.props;
+    const isMarked = marked.includes(date);
+
+    if (isMarked) {
+      return (
+        <View style={styles.markedContaienr}>
+          <View style={[styles.marked, markedStyle]} />
+        </View>
+      );
+    }
+
+    return null;
   }
 
   fillInWeek(days, method) {
@@ -195,7 +215,7 @@ class Calendar extends Component {
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
@@ -249,6 +269,25 @@ var styles = StyleSheet.create({
 
   past: {
     opacity: 0.3
+  },
+
+  markedContaienr: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'flex-end',
+    marginBottom: 2,
+    alignItems: 'center'
+  },
+
+  marked: {
+    width: 5,
+    height: 5,
+    borderRadius: 5,
+    opacity: 0.8,
+    backgroundColor: '#3e3e3e'
   }
 });
 
