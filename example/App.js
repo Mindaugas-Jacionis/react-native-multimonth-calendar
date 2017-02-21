@@ -16,7 +16,7 @@ export default function App() {
           <Text>Example App</Text>
           <Calendar
             monthsCount={8}
-            marked={['2017-02-26']}
+            marked={['2017-02-26', '2017-02-12']}
           />
         </View>
       );

@@ -178,10 +178,11 @@ class Calendar extends Component {
   }
 
   renderMarker(date) {
-    const { marked, markedStyle } = this.props;
+    const { unavailable, marked, markedStyle } = this.props;
     const isMarked = marked.includes(date);
+    const isUnavailable = unavailable.includes(date);
 
-    if (isMarked) {
+    if (isMarked && date >= moment().format('YYYY-MM-DD') && !isUnavailable) {
       return (
         <View style={styles.markedContaienr}>
           <View style={[styles.marked, markedStyle]} />
