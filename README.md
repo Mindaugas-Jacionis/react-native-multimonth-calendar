@@ -1,6 +1,18 @@
 Here will be multimonth calendar component with props:
-- unavailable,
-- selected date,
-- start date,
-- months count
-- onSelect
+
+-  startDate: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
+-  unavailable: PropTypes.array,
+-  selected: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
+-  weekContianerStyle: PropTypes.object,
+-  weekTextStyle: PropTypes.object,
+-  headlineTextStyle: PropTypes.object,
+-  dayTextStyle: PropTypes.object,
+-  monthsCount: PropTypes.number,
+-  week: PropTypes.array,
+-  monthNames: PropTypes.array,
+-  onSelect: PropTypes.function,
+-  onUnavailableSelect: PropTypes.any,
+-  clickablePast: PropTypes.bool,
+-  pastTextStyle: PropTypes.object,
+-  selectedTextStyle: PropTypes.object,
+-  marked: PropTypes.array,
