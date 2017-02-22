@@ -161,19 +161,27 @@ class Calendar extends Component {
     const notPast = moment().format('YYYY-MM-DD') <= formatedDate;
 
     let style = [styles.day, dayTextStyle];
-    isUnavailable ? style.push.apply(style, [styles.unavailable, unavailableTextStyle]) : null;
+    isUnavailable ? style.push.apply(style, [styles.unavailableText, unavailableTextStyle]) : null;
     !notPast ? style.push.apply(style, [styles.past, pastTextStyle]) : null;
     isSelected ? style.push.apply(style, [styles.selectedText, selectedTextStyle]) : null;
 
     return (
       <TouchableOpacity style={styles.default} onPress={() => this.onPress(formatedDate)}>
-        <View style={isSelected ? styles.selected : {}}>
-          <Text style={style}>
-            {dayNumber}
-          </Text>
-        </View>
+        {isSelected ? this.renderBubble() : null}
+        <Text style={style}>
+          {dayNumber}
+        </Text>
         {this.renderMarker(formatedDate)}
+        {isUnavailable ? this.renderUnavailable() : null}
       </TouchableOpacity>
+    );
+  }
+
+  renderBubble() {
+    return (
+      <View style={styles.absoluteContaienr}>
+        <View style={styles.selected} />
+      </View>
     );
   }
 
@@ -184,13 +192,21 @@ class Calendar extends Component {
 
     if (isMarked && date >= moment().format('YYYY-MM-DD') && !isUnavailable) {
       return (
-        <View style={styles.markedContaienr}>
+        <View style={[styles.absoluteContaienr, {justifyContent: 'flex-end'}]}>
           <View style={[styles.marked, markedStyle]} />
         </View>
       );
     }
 
     return null;
+  }
+
+  renderUnavailable() {
+    return (
+      <View style={styles.absoluteContaienr}>
+        <View style={styles.unavailable} />
+      </View>
+    );
   }
 
   fillInWeek(days, method) {
@@ -246,15 +262,14 @@ const styles = StyleSheet.create({
 
   day: {
     fontSize: 16,
-    fontWeight: '500'
+    fontWeight: '500',
+    color: '#3e3e3e'
   },
 
   selected: {
-    backgroundColor: '#E41F36',
-    width: 30,
-    height: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#e41f36',
+    width: 28,
+    height: 28,
     borderRadius: 1000
   },
 
@@ -263,23 +278,29 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
 
-  unavailable: {
-    textDecorationLine: 'line-through',
+  unavailableText: {
     opacity: 0.5
+  },
+
+  unavailable: {
+    opacity: 0.5,
+    height: 1,
+    width: 30,
+    backgroundColor: '#3e3e3e',
+    transform: [{ rotate: '135deg' }]
   },
 
   past: {
     opacity: 0.3
   },
 
-  markedContaienr: {
+  absoluteContaienr: {
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    justifyContent: 'flex-end',
-    marginBottom: 2,
+    justifyContent: 'center',
     alignItems: 'center'
   },
 

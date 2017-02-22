@@ -17,6 +17,7 @@ export default function App() {
           <Calendar
             monthsCount={8}
             marked={['2017-02-26', '2017-02-12']}
+            unavailable={['2017-02-27']}
           />
         </View>
       );
