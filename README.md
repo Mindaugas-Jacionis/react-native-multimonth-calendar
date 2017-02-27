@@ -1,5 +1,3 @@
-Here will be multimonth calendar component with props:
-
 ## Properties
 
 | Property       | Value            | Description |
