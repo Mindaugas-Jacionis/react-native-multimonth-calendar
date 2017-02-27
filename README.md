@@ -1,6 +1,9 @@
 # React-Native-Calendar-Events
 React Native Module for IOS and Android Calendar. Renders scrollable, multi-month calendar with possibility to cross out unwanted dates or call function on date selection.
 
+![](https://mindaugas-jacionis.github.io/external-gifs/out.gif)
+
+
 ## Install
 ```
 npm install react-native-multimonth-calendar

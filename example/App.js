@@ -13,11 +13,13 @@ export default function App() {
     render() {
       return (
         <View style={styles.container}>
-          <Text>Example App</Text>
+          <Text style={styles.text}>Example App</Text>
           <Calendar
             monthsCount={8}
-            marked={['2017-02-26', '2017-02-12']}
-            unavailable={['2017-02-27']}
+            marked={['2017-02-28', '2017-03-05', '2017-03-06', '2017-03-07']}
+            unavailable={['2017-03-01', '2017-03-02']}
+            selected={'2017-03-16'}
+            onSelect={(date) => { alert('selected date is: ' + date); }}
           />
         </View>
       );
@@ -28,6 +30,11 @@ export default function App() {
     container: {
       flex: 1,
       backgroundColor: '#F5FCFF',
+      paddingTop: 40
+    },
+
+    text: {
+      textAlign: 'center'
     }
   });
 
